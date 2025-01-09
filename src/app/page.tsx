@@ -1,7 +1,9 @@
+import Landing from "@/components/landing/Landing";
+
 export default function Home() {
   return (
-    <div className="h-screen w-full bg-yellow-500 dark:bg-blue-500">
-      hello next js
+    <div className="">
+      <Landing />
     </div>
   );
 }
