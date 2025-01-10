@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import DropdownMenu from "./DropdownMenu";
 import HamburgerIcon from "./HambergerIcon";
+import Image from "next/image";
 
 interface NavItem {
   href: string;
@@ -146,7 +147,14 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
             {/* <Planet className="w-8 h-8 text-blue-600" /> */}
-            <span className="text-xl font-bold text-blue-600">Novanectar</span>
+            <span className="text-xl font-bold text-blue-600">
+              <Image
+                alt="novanectar"
+                src="/logo.png"
+                width={200}
+                height={800}
+              />
+            </span>
           </Link>
           <div className="hidden md:flex space-x-4">
             {navItems.map((item) => (
