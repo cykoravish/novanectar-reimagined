@@ -73,7 +73,7 @@ const Landing = () => {
       {/* Initial landing view */}
       <main className="relative h-screen w-full overflow-hidden">
         {/* Stars background */}
-        <div className="absolute inset-0 bg-[url('/stars-bg.png')] opacity-50" />
+        {/* <div className="absolute inset-0 bg-[url('/stars-bg.png')] opacity-50" /> */}
 
         {/* Portal background */}
         <div className="relative w-full h-full">
@@ -90,8 +90,8 @@ const Landing = () => {
             <Image
               src={landing}
               alt="Portal background"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
               className="object-cover"
             />
           </div>
@@ -113,8 +113,8 @@ const Landing = () => {
           <Image
             src={ellipse1}
             alt="Floating element"
-            layout="fill"
-            objectFit="contain"
+            fill
+            style={{ objectFit: "contain" }}
             className="w-full h-full"
           />
         </motion.div>
@@ -134,8 +134,8 @@ const Landing = () => {
           <Image
             src={ellipse2}
             alt="Floating element"
-            layout="fill"
-            objectFit="contain"
+            fill
+            style={{ objectFit: "contain" }}
             className="w-full h-full"
           />
         </motion.div>
@@ -155,8 +155,8 @@ const Landing = () => {
           <Image
             src={ellipse1}
             alt="Floating element"
-            layout="fill"
-            objectFit="contain"
+            fill
+            style={{ objectFit: "contain" }}
             className="w-full h-full"
           />
         </motion.div>
@@ -176,8 +176,8 @@ const Landing = () => {
           <Image
             src={ellipse2}
             alt="Floating element"
-            layout="fill"
-            objectFit="contain"
+            fill
+            style={{ objectFit: "contain" }}
             className="w-full h-full"
           />
         </motion.div>

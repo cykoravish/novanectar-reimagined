@@ -151,8 +151,9 @@ const Navbar: React.FC = () => {
               <Image
                 alt="novanectar"
                 src="/logo.png"
+                style={{ width: "60%", height: "auto" }}
                 width={200}
-                height={800}
+                height={100} // Placeholder values, won't affect the final rendering
               />
             </span>
           </Link>
