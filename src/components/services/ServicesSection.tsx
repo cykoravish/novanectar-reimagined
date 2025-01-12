@@ -44,25 +44,25 @@ const ServiceCard = ({ title, description, icon, image }: ServiceCardProps) => {
         />
       </div>
 
-      <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-blue-50 rounded-full">
+      <div className="flex items-center justify-center w-32 h-20 mx-auto mb-6">
         <Image
           src={icon}
           alt={`${title} icon`}
-          width={40}
-          height={40}
-          className="transition-transform duration-300 group-hover:scale-110"
+          width={200}
+          height={200}
+          className="transition-transform duration-300 group-hover:scale-110 border-8 border-blue-300 rounded-full"
         />
       </div>
 
       <motion.h3
-        className="mb-4 text-2xl font-bold text-center text-gray-800"
+        className="mb-4 text-xl font-bold text-center text-gray-800"
         animate={{ scale: isHovered ? 1.05 : 1 }}
         transition={{ duration: 0.2 }}
       >
         {title}
       </motion.h3>
 
-      <p className="text-center text-gray-600">{description}</p>
+      <p className="text-center text-gray-600 text-xl">{description}</p>
 
       <motion.div
         className="absolute inset-x-0 bottom-0 h-1 bg-blue-500"

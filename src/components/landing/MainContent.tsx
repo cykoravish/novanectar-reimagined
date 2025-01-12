@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import Image from "next/image";
 import { useEffect } from "react";
 import ServicesSection from "../services/ServicesSection";
+import ProcessSection from "../process/ProcessSection";
 
 export const MainContent = () => {
   // Animation with GSAP
@@ -83,6 +84,7 @@ export const MainContent = () => {
           <div className="bg-blue-300 bg-opacity-50 h-[100rem] pt-16 text-black text-3xl text-center">
             <h1 className="font-semibold underline">Services</h1>
             <ServicesSection />
+            <ProcessSection/>
           </div>
         </div>
       </div>
