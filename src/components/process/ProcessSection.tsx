@@ -30,7 +30,7 @@ const ServiceCard = ({ title, description, icon }:any) => {
           duration: 0.5,
           ease: "easeOut",
         }}
-        className="absolute inset-[-6rem] bg-gradient-to-br from-blue-600 to-blue-500 pointer-events-none"
+        className="absolute inset-[-10rem] bg-gradient-to-br from-blue-600 to-blue-500 pointer-events-none rounded-full"
       />
 
       {/* Content container */}
