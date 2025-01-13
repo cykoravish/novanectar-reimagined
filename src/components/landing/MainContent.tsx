@@ -11,6 +11,10 @@ import ServicesSection from "../services/ServicesSection";
 import ProcessSection from "../process/ProcessSection";
 import ProjectSession from "../projects/ProjectSession";
 import WhyChooseUs from "../why-us/WhyUsSession";
+import ContactForm from "../contact/contact";
+import TestimonialSection from "../testimonial/TestimonialSecion";
+import FAQSection from "../faq/FaqSection";
+import FooterSection from "../footer/FooterSection";
 
 export const MainContent = () => {
   // Animation with GSAP
@@ -88,7 +92,11 @@ export const MainContent = () => {
             <ServicesSection />
             <ProcessSection />
             <ProjectSession />
-            <WhyChooseUs/>
+            <WhyChooseUs />
+            <ContactForm />
+            <TestimonialSection />
+            <FAQSection />
+            <FooterSection />
           </div>
         </div>
       </div>
