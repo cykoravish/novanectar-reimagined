@@ -2,9 +2,9 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import ellipse1 from "@/assets/ellipse1.png";
-import ellipse2 from "@/assets/ellipse2.png";
-import landing from "@/assets/landing.png";
+import ellipse1 from "@/assets/landing/ellipse1.png";
+import ellipse2 from "@/assets/landing/ellipse2.png";
+import landing from "@/assets/landing/landing.png";
 import { MainContent } from "./MainContent";
 import Image from "next/image";
 

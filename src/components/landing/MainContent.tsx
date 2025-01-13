@@ -1,8 +1,8 @@
 "use client";
 // import { cn } from "@/lib/utils";
 // import { motion } from "framer-motion";
-import techLife from "@/assets/tech-life.png";
-import dotts from "@/assets/dotted-background.png";
+import techLife from "@/assets/landing/tech-life.png";
+import dotts from "@/assets/landing/dotted-background.png";
 
 import { gsap } from "gsap";
 import Image from "next/image";
