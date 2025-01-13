@@ -31,15 +31,16 @@ export default {
     },
   },
   plugins: [
-
     addVariablesForColors,
- 
-   function ({ matchUtilities, theme }: any) {
+
+    function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
           "bg-grid": (value: any) => ({
             backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100" height="100" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
+              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="175" height="175" fill="none" stroke="${value}" stroke-width="0.2"><path d="M0 .5H31.5V32"/>
+               <circle cx="31.5" cy="0.5" r="0.5" fill="#777777" />              
+              </svg>`
             )}")`,
           }),
           "bg-grid-small": (value: any) => ({

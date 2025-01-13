@@ -36,13 +36,17 @@ export const MainContent = () => {
       <div>
         <div className="h-[180rem] w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative">
           <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-          <h1 className="pt-28 text-black text-4xl text-center font-semibold">
-            We Build success Stories Not Just Websites
-          </h1>
-          <p className="text-black text-center font-medium text-lg pt-10">
-            Transform your business with powerfull digital strategies designed
-            for real world result
-          </p>
+          <div className="w-5xl pt-28 px-2  text-center">
+            <h1 className="text-black text-3xl md:text-5xl sm:text-4xl max-w-4xl mx-auto font-bold">
+              We Build success Stories Not Just Websites
+            </h1>
+          </div>
+          <div className="pt-10 text-center px-2 max-w-xl mx-auto">
+            <p className="text-black text-center font-medium text-sm md:text-base lg:text-lg">
+              Transform your business with powerfull digital strategies designed
+              for real world result
+            </p>
+          </div>
           <div className="flex pt-10 justify-center gap-4">
             <button className="bg-blue-500 px-4 py-3 text-white rounded-md">
               Get Started Toaday
