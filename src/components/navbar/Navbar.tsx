@@ -105,7 +105,7 @@ export default function Navbar() {
               alt="Novanectar Logo"
               width={200}
               height={50}
-              className="w-auto h-8"
+              className="w-auto h-12"
               priority
             />
           </Link>
