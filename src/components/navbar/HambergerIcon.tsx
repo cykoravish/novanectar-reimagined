@@ -14,8 +14,8 @@ const HamburgerIcon: React.FC<HamburgerIconProps> = ({ isOpen, toggleMenu }) => 
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.3,
-        ease: "easeInOut"
+        duration: 0.6, // Increased duration
+        ease: [0.4, 0, 0.2, 1] // Custom easing
       }
     },
     open: (custom: number) => ({
@@ -23,8 +23,8 @@ const HamburgerIcon: React.FC<HamburgerIconProps> = ({ isOpen, toggleMenu }) => 
       y: custom === 1 ? 8 : custom === 3 ? -8 : 0,
       opacity: custom === 2 ? 0 : 1,
       transition: {
-        duration: 0.3,
-        ease: "easeInOut"
+        duration: 0.6, // Increased duration
+        ease: [0.4, 0, 0.2, 1] // Custom easing
       }
     }),
   }

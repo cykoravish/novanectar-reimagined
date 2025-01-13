@@ -59,7 +59,7 @@ export default function Navbar() {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
       
-      // Animate mobile menu using GSAP
+      // Slower and smoother GSAP animation
       gsap.fromTo(mobileMenuRef.current,
         { 
           opacity: 0,
@@ -68,7 +68,7 @@ export default function Navbar() {
         { 
           opacity: 1,
           height: "100vh",
-          duration: 0.5,
+          duration: 0.8, // Increased duration
           ease: "power2.inOut"
         }
       )
@@ -80,7 +80,7 @@ export default function Navbar() {
         gsap.to(mobileMenuRef.current, {
           opacity: 0,
           height: 0,
-          duration: 0.5,
+          duration: 0.8, // Increased duration
           ease: "power2.inOut"
         })
       }
@@ -136,12 +136,12 @@ export default function Navbar() {
         className="lg:hidden overflow-hidden"
         style={{ height: 0 }}
       >
-        <div className="bg-[#F8F9FA] min-h-screen">
-          <div className="px-4 pt-4">
+        <div className="bg-[#F8F9FA] h-screen overflow-y-auto">
+          <div className="px-4 pt-4 pb-20"> {/* Added padding bottom for scroll space */}
             {/* <div className="flex items-center justify-between mb-8">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/logo.png"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-HyZr48zS4OVYbYYyDSqmmIGc9XMh5P.png"
                   alt="Novanectar Logo"
                   width={150}
                   height={40}
@@ -155,7 +155,11 @@ export default function Navbar() {
                   key={item.label}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ 
+                    delay: index * 0.15, // Increased delay for smoother stagger
+                    duration: 0.6, // Increased duration
+                    ease: [0.4, 0, 0.2, 1] // Custom easing
+                  }}
                   className="border-b border-gray-200"
                 >
                   {item.items ? (
@@ -173,7 +177,7 @@ export default function Navbar() {
                         <span className="text-base">{item.label}</span>
                         <motion.div
                           animate={{ rotate: expandedItem === item.label ? 180 : 0 }}
-                          transition={{ duration: 0.3 }}
+                          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                         >
                           <ChevronDown className="w-5 h-5 text-gray-500" />
                         </motion.div>
@@ -186,22 +190,22 @@ export default function Navbar() {
                               height: "auto", 
                               opacity: 1,
                               transition: {
-                                height: { duration: 0.3, ease: "easeOut" },
-                                opacity: { duration: 0.2 }
+                                height: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
+                                opacity: { duration: 0.4, delay: 0.2 }
                               }
                             }}
                             exit={{ 
                               height: 0, 
                               opacity: 0,
                               transition: {
-                                height: { duration: 0.3, ease: "easeIn" },
+                                height: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
                                 opacity: { duration: 0.2 }
                               }
                             }}
                             className="overflow-hidden"
                           >
                             <div className="pb-4 space-y-4">
-                              {item.items.map((subItem) => (
+                              {item.items.map((subItem, subIndex) => (
                                 <motion.div
                                   key={subItem.label}
                                   initial={{ opacity: 0, y: -10 }}
@@ -209,8 +213,9 @@ export default function Navbar() {
                                     opacity: 1, 
                                     y: 0,
                                     transition: {
-                                      duration: 0.2,
-                                      ease: "easeOut"
+                                      delay: subIndex * 0.1,
+                                      duration: 0.6,
+                                      ease: [0.4, 0, 0.2, 1]
                                     }
                                   }}
                                 >
@@ -242,7 +247,12 @@ export default function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navItems.length * 0.1 }}
+                transition={{ 
+                  delay: navItems.length * 0.15,
+                  duration: 0.6,
+                  ease: [0.4, 0, 0.2, 1]
+                }}
+                className="pt-4" // Added padding top for better spacing
               >
                 <Link
                   href="/contact"
