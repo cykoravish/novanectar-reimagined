@@ -1,7 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
-import { gsap } from 'gsap'
+import { motion } from 'framer-motion'
 
 interface HamburgerIconProps {
   isOpen: boolean
@@ -9,75 +8,46 @@ interface HamburgerIconProps {
 }
 
 const HamburgerIcon: React.FC<HamburgerIconProps> = ({ isOpen, toggleMenu }) => {
-  const iconRef = useRef<HTMLDivElement>(null)
-  const timeline = useRef<gsap.core.Timeline | null>(null)
-
-  useEffect(() => {
-    const icon = iconRef.current
-    if (icon) {
-      const lines = icon.querySelectorAll('.line')
-      
-      // Create a new timeline if it doesn't exist
-      if (!timeline.current) {
-        timeline.current = gsap.timeline({ paused: true })
-          .to(lines[0], { 
-            y: 8, 
-            duration: 0.2,
-            ease: 'power2.inOut'
-          })
-          .to(lines[2], { 
-            y: -8, 
-            duration: 0.2,
-            ease: 'power2.inOut'
-          }, 0)
-          .to(lines[1], { 
-            opacity: 0, 
-            duration: 0.2,
-            ease: 'power2.inOut'
-          }, 0)
-          .to(lines[0], { 
-            rotation: 45, 
-            transformOrigin: '50% 50%',
-            duration: 0.2,
-            ease: 'power2.inOut'
-          })
-          .to(lines[2], { 
-            rotation: -45, 
-            transformOrigin: '50% 50%',
-            duration: 0.2,
-            ease: 'power2.inOut'
-          }, '>-0.2')
+  const lineVariants = {
+    closed: {
+      rotate: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
       }
-
-      // Play or reverse the timeline based on isOpen state
-      if (isOpen) {
-        timeline.current.play()
-      } else {
-        timeline.current.reverse()
+    },
+    open: (custom: number) => ({
+      rotate: custom === 1 ? 45 : custom === 3 ? -45 : 0,
+      y: custom === 1 ? 8 : custom === 3 ? -8 : 0,
+      opacity: custom === 2 ? 0 : 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
       }
-    }
-
-    // Cleanup
-    return () => {
-      if (timeline.current) {
-        timeline.current.kill()
-      }
-    }
-  }, [isOpen])
+    }),
+  }
 
   return (
-    <div 
-      ref={iconRef} 
+    <motion.div 
       className="w-6 h-6 flex flex-col justify-between cursor-pointer" 
       onClick={toggleMenu}
       role="button"
       aria-label="Toggle menu"
       aria-expanded={isOpen}
     >
-      <div className="line w-full h-0.5 bg-gray-800 rounded-full"></div>
-      <div className="line w-full h-0.5 bg-gray-800 rounded-full"></div>
-      <div className="line w-full h-0.5 bg-gray-800 rounded-full"></div>
-    </div>
+      {[1, 2, 3].map((line) => (
+        <motion.div
+          key={line}
+          className="w-full h-0.5 bg-gray-800 rounded-full origin-center"
+          custom={line}
+          variants={lineVariants}
+          animate={isOpen ? "open" : "closed"}
+          initial="closed"
+        />
+      ))}
+    </motion.div>
   )
 }
 
