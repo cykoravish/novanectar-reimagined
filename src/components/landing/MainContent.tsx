@@ -47,15 +47,19 @@ export const MainContent = () => {
               for real world result
             </p>
           </div>
-          <div className="flex pt-10 justify-center gap-4">
-            <button className="bg-blue-500 px-4 py-3 text-white rounded-md">
-              Get Started Toaday
+          <div className="flex pt-10 px-2 justify-center gap-4">
+            {/* Get Started Button */}
+            <button className="bg-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-white text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95">
+              Get Started Today
             </button>
-            <button className="border border-blue-500 text-blue-500 px-4 py-3 rounded-md font-medium">
-              Schedule a free Consultant
+
+            {/* Schedule Consultant Button */}
+            <button className="border border-blue-500 text-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:text-white hover:bg-blue-500 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95">
+              Schedule a Free Consultant
             </button>
           </div>
-          <p className="text-black text-center pt-8">
+
+          <p className="text-black text-center pt-8 px-2">
             Building Success Stories for
             <span className="text-blue-500">200+ Trusted clients</span>
           </p>
