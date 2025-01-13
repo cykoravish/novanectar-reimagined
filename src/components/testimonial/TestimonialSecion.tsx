@@ -12,7 +12,8 @@ const testimonialData = {
 
 const MotionImage = motion(Image);
 
-const TestimonialCard = ({ position, className = "" }) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const TestimonialCard = ({ position, className = "" }:any) => {
   const cardVariants = {
     initial: { 
       opacity: 0, 

@@ -35,7 +35,7 @@ const faqs = [
   }
 ];
 
-const FAQItem = ({ faq, isOpen, onClick, isHovered, onHover, onHoverEnd }) => {
+const FAQItem = ({ faq, isOpen, onClick, isHovered, onHover, onHoverEnd }:any) => {
   return (
     <motion.div
       className="border-t border-gray-400/30 py-4"
@@ -106,8 +106,8 @@ const FAQItem = ({ faq, isOpen, onClick, isHovered, onHover, onHoverEnd }) => {
 };
 
 const FAQSection = () => {
-  const [openId, setOpenId] = useState(null);
-  const [hoveredId, setHoveredId] = useState(null);
+  const [openId, setOpenId] = useState<any>(null);
+  const [hoveredId, setHoveredId] = useState<any>(null);
 
   return (
     <div className="min-h-screen bg-[#0B2341] px-4 py-12 md:p-12 lg:p-16">
@@ -131,7 +131,7 @@ const FAQSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Let's Make Something Awesome Together
+              Let&apos;s Make Something Awesome Together
             </motion.h1>
             
             <motion.p 
@@ -140,7 +140,7 @@ const FAQSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              We're not just another agency-we're your digital growth partners. With years of industry experience and a passion for innovation, our team is dedicated to delivering measurable results propel your business forward
+              We&apos;re not just another agency-we&apos;re your digital growth partners. With years of industry experience and a passion for innovation, our team is dedicated to delivering measurable results propel your business forward
             </motion.p>
           </div>
 

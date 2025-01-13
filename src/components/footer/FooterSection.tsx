@@ -7,7 +7,7 @@ import gsap from 'gsap';
 import ellipse from "@/assets/footer/ellipse.png"
 
 const FooterSection = () => {
-  const footerRef = useRef(null);
+  const footerRef = useRef<any>(null);
 
   useEffect(() => {
     // GSAP animation for the floating ellipses

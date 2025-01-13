@@ -48,7 +48,7 @@ const gridItems = [
   },
 ];
 
-const ProjectCard = ({ item, index }) => {
+const ProjectCard = ({ item, index }:any) => {
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {

@@ -15,8 +15,8 @@ import java from "@/assets/landing/icons/java.png";
 
 import gsap from "gsap";
 
-const FloatingTechLayout = ({ children }) => {
-  const techIcons = [
+const FloatingTechLayout = ({ children }:any) => {
+  const techIcons:any = [
     // Left side icons with different animation patterns
     {
       src:node,
@@ -92,7 +92,7 @@ const FloatingTechLayout = ({ children }) => {
     },
   ];
 
-  const iconRefs = useRef([]);
+  const iconRefs:any = useRef<any>([]);
 
   useEffect(() => {
     iconRefs.current = iconRefs.current.slice(0, techIcons.length);
@@ -101,7 +101,7 @@ const FloatingTechLayout = ({ children }) => {
     gsap.killTweensOf(iconRefs.current);
 
     // Create animations for each icon based on its pattern
-    iconRefs.current.forEach((icon, index) => {
+    iconRefs.current.forEach((icon:any, index:any) => {
       if (!icon) return;
 
       const pattern = techIcons[index].pattern;
@@ -177,10 +177,10 @@ const FloatingTechLayout = ({ children }) => {
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Floating icons layer */}
       <div className="absolute inset-0 pointer-events-none">
-        {techIcons.map((icon, index) => (
+        {techIcons.map((icon:any, index:any) => (
           <div
             key={icon.alt}
-            ref={(el) => (iconRefs.current[index] = el)}
+            ref={(el:any) => (iconRefs.current[index] = el)}
             className={`absolute ${icon.className} transition-transform will-change-transform`}
           >
             <div className="relative w-full h-full">

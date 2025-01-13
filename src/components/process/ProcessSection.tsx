@@ -64,7 +64,7 @@ const ServiceCard = ({ title, description, icon }:any) => {
 };
 
 export default function ProcessSection() {
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<any>(null);
 
   const scroll = (direction:any) => {
     const container = scrollContainerRef.current;
