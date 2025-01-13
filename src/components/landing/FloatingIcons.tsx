@@ -1,11 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import java from "@/assets/landing/icons/java.png";
 import js from "@/assets/landing/icons/js.png";
-import physics from "@/assets/landing/icons/physics.png";
+import angular from "@/assets/landing/icons/angular.png";
+import dock from "@/assets/landing/icons/dock.png";
+import dock1 from "@/assets/landing/icons/dock1.png";
+import dock2 from "@/assets/landing/icons/dock2.png";
+import express from "@/assets/landing/icons/express.png";
+import node from "@/assets/landing/icons/node.png";
 import python from "@/assets/landing/icons/python.png";
-import programing from "@/assets/landing/icons/programing.png";
+import react from "@/assets/landing/icons/react.png";
+import view from "@/assets/landing/icons/view.png";
+import java from "@/assets/landing/icons/java.png";
+
 
 import gsap from "gsap";
 
@@ -13,19 +19,19 @@ const FloatingTechLayout = ({ children }) => {
   const techIcons = [
     // Left side icons with different animation patterns
     {
-      src:java,
+      src:node,
       alt: "Node.js",
       className: "w-12 h-12 md:w-16 md:h-16 left-[5%] top-[15%]",
       pattern: "circular",
     },
     {
-      src: js,
+      src: java,
       alt: "Java",
       className: "w-12 h-12 md:w-16 md:h-16 left-[8%] bottom-[20%]",
       pattern: "wave",
     },
     {
-      src: programing,
+      src: python,
       alt: "Python",
       className: "w-14 h-14 md:w-20 md:h-20 left-[15%] top-[40%]",
       pattern: "bounce",
@@ -33,19 +39,19 @@ const FloatingTechLayout = ({ children }) => {
 
     // Right side icons with different patterns
     {
-      src: java,
+      src: js,
       alt: "JavaScript",
       className: "w-12 h-12 md:w-16 md:h-16 right-[5%] top-[20%]",
       pattern: "wave",
     },
     {
-      src: physics,
+      src: react,
       alt: "React",
       className: "w-12 h-12 md:w-16 md:h-16 right-[10%] bottom-[25%]",
       pattern: "circular",
     },
     {
-      src: java,
+      src: angular,
       alt: "Angular",
       className: "w-12 h-12 md:w-16 md:h-16 right-[15%] top-[45%]",
       pattern: "bounce",
@@ -53,13 +59,13 @@ const FloatingTechLayout = ({ children }) => {
 
     // Top icons
     {
-      src: js,
+      src: dock,
       alt: "Flutter",
       className: "w-12 h-12 md:w-16 md:h-16 left-[30%] top-[10%]",
       pattern: "wave",
     },
     {
-      src: programing,
+      src: dock1,
       alt: "Kotlin",
       className: "w-12 h-12 md:w-16 md:h-16 right-[30%] top-[5%]",
       pattern: "circular",
@@ -67,19 +73,19 @@ const FloatingTechLayout = ({ children }) => {
 
     // Bottom icons
     {
-      src: physics,
+      src: express,
       alt: "Express",
       className: "w-12 h-12 md:w-16 md:h-16 left-[25%] bottom-[10%]",
       pattern: "bounce",
     },
     {
-      src: python,
+      src: dock2,
       alt: "Next.js",
       className: "w-12 h-12 md:w-16 md:h-16 right-[25%] bottom-[15%]",
       pattern: "wave",
     },
     {
-      src: java,
+      src: view,
       alt: "TypeScript",
       className: "w-12 h-12 md:w-16 md:h-16 right-[40%] bottom-[8%]",
       pattern: "circular",
