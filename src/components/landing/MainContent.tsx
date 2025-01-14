@@ -36,11 +36,51 @@ export const MainContent = () => {
       }
     );
   }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const hoverLayer = document.getElementById('grid-hover-layer');
+      if (hoverLayer) {
+        const x = e.clientX;
+        const y = e.clientY + window.scrollY;
+        const gradientValue = `radial-gradient(circle 8rem at ${x}px ${y}px, black, transparent)`;
+        
+        // Type casting the element to HTMLElement with CSSStyleDeclaration
+        const element = hoverLayer as HTMLElement;
+        element.style.maskImage = gradientValue;
+        (element.style as any).WebkitMaskImage = gradientValue;  // Using type assertion for webkit prefix
+        element.style.opacity = '1';
+      }
+    };
+
+    const handleMouseLeave = () => {
+      const hoverLayer = document.getElementById('grid-hover-layer');
+      if (hoverLayer) {
+        (hoverLayer as HTMLElement).style.opacity = '0';
+      }
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+
   return (
     <>
       <div>
-        <div className="lg:h-[180rem] md:h-[205rem] h-[350rem] w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative">
-          <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="relative lg:h-[180rem] md:h-[205rem] h-[350rem] w-full dark:bg-black bg-white">
+      {/* Base grid */}
+      <div className="absolute inset-0 dark:bg-grid-white/[0.2] bg-grid-black/[0.2]" />
+      
+      {/* Hover effect layer */}
+      <div 
+        className="absolute inset-0 dark:bg-grid-hover-white/[0.4] bg-grid-hover-black/[0.4] opacity-0 transition-opacity duration-300"
+        id="grid-hover-layer"
+      />
           {/* //landing page// */}
           <FloatingTechLayout>
             <div className="w-5xl pt-28 px-2 text-center">
@@ -58,7 +98,7 @@ export const MainContent = () => {
               <button className="bg-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-white text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95">
                 Get Started Today
               </button>
-              <button className="border border-blue-500 text-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:text-white hover:bg-blue-500 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95">
+              <button className="border border-blue-500 text-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:text-white hover:bg-blue-500 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95 bg-white">
                 Schedule a Free Consultation
               </button>
             </div>
