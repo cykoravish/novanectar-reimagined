@@ -8,8 +8,6 @@ interface ServiceContentProps {
 }
 
 export default function ServiceContent({ service }: ServiceContentProps) {
-  console.log("services: ", service);
-
   return (
     <>
       {/* Content Section */}
