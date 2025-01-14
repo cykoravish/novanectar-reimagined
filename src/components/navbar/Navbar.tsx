@@ -17,34 +17,34 @@ interface NavItem {
 const navItems: NavItem[] = [
   { href: "/", label: "Home" },
   { 
-    href: "/services", 
+    href: "/", 
     label: "Services",
     items: [
-      { label: "Website Development", href: "/services/web" },
-      { label: "Mobile Development", href: "/services/mobile" },
-      { label: "Graphic Design", href: "/services/design" },
-      { label: "Digital Marketing", href: "/services/marketing" },
+      { label: "Website Development", href: "/services/web-development" },
+      { label: "Mobile Development", href: "/services/mobile-development" },
+      { label: "Graphic Design", href: "/services/graphic-design" },
+      { label: "Digital Marketing", href: "/services/digital-marketing" },
       { label: "Ecommerce", href: "/services/ecommerce" },
       { label: "SEO", href: "/services/seo" },
     ]
   },
-  { href: "/work", label: "Our Work" },
+  { href: "/", label: "Our Work" },
   { 
     href: "/internship", 
     label: "Internship",
     items: [
-      { label: "Web Development", href: "/internship/web" },
-      { label: "Mobile Development", href: "/internship/mobile" },
-      { label: "UI/UX Design", href: "/internship/design" },
+      { label: "Web Development", href: "/" },
+      { label: "Mobile Development", href: "/" },
+      { label: "UI/UX Design", href: "/" },
     ]
   },
   { 
-    href: "/training", 
+    href: "/", 
     label: "Training",
     items: [
-      { label: "Frontend Development", href: "/training/frontend" },
-      { label: "Backend Development", href: "/training/backend" },
-      { label: "Full Stack Development", href: "/training/fullstack" },
+      { label: "Frontend Development", href: "/" },
+      { label: "Backend Development", href: "/" },
+      { label: "Full Stack Development", href: "/" },
     ]
   },
 ]
@@ -138,17 +138,6 @@ export default function Navbar() {
       >
         <div className="bg-[#F8F9FA] h-screen overflow-y-auto">
           <div className="px-4 pt-4 pb-20"> {/* Added padding bottom for scroll space */}
-            {/* <div className="flex items-center justify-between mb-8">
-              <Link href="/" className="flex items-center">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-HyZr48zS4OVYbYYyDSqmmIGc9XMh5P.png"
-                  alt="Novanectar Logo"
-                  width={150}
-                  height={40}
-                  className="w-auto h-8"
-                />
-              </Link>
-            </div> */}
             <div className="space-y-4">
               {navItems.map((item, index) => (
                 <motion.div

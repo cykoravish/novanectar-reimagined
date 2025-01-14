@@ -196,7 +196,6 @@ const FloatingTechLayout = ({ children }: any) => {
           </div>
         ))}
       </div>
-
       {/* Main content layer */}
       <div className="relative z-10">{children}</div>
     </div>

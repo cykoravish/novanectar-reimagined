@@ -8,6 +8,17 @@ import landing from "@/assets/landing/landing.png";
 import { MainContent } from "./MainContent";
 import Image from "next/image";
 
+// Add this function at the top of the file, outside of the Landing component
+function shouldPlayAnimation() {
+  if (typeof window === 'undefined') return false;
+  const hasPlayed = sessionStorage.getItem('landingAnimationPlayed');
+  if (!hasPlayed) {
+    sessionStorage.setItem('landingAnimationPlayed', 'true');
+    return true;
+  }
+  return false;
+}
+
 const Landing = () => {
   const [hasAnimationPlayed, setHasAnimationPlayed] = useState(false);
   const [shouldShowAnimation, setShouldShowAnimation] = useState(false);
@@ -17,10 +28,10 @@ const Landing = () => {
   const mainContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Check if user is at the top of the page
-    if (window.scrollY === 0) {
-      setShouldShowAnimation(true);
-    } else {
+    // Check if the animation should play
+    const shouldPlay = shouldPlayAnimation();
+    setShouldShowAnimation(shouldPlay);
+    if (!shouldPlay) {
       setHasAnimationPlayed(true);
     }
   }, []);
@@ -109,7 +120,7 @@ const Landing = () => {
 
   return (
     <div ref={containerRef} className="relative min-h-screen bg-black">
-      {shouldShowAnimation && (
+      {shouldShowAnimation ? (
         <main className="relative h-screen w-full overflow-hidden">
           <div className="relative w-full h-full">
             <div
@@ -232,7 +243,7 @@ const Landing = () => {
             </h1>
           </div>
         </main>
-      )}
+      ) : null}
 
       {/* Main content */}
       <div ref={mainContentRef} className="absolute top-0 left-0 w-full">
@@ -243,3 +254,4 @@ const Landing = () => {
 };
 
 export default Landing;
+
