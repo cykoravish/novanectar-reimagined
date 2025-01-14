@@ -10,7 +10,9 @@ const testimonialData = {
   content: 'Working with NovaNectar was a game-changer. Their team delivered a seamless app that exceeded our expectations.'
 };
 
-const MotionImage = motion(Image);
+// const MotionImage = motion(Image);
+const MotionImage = motion.create(Image);
+
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const TestimonialCard = ({ position, className = "" }:any) => {

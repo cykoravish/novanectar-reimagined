@@ -12,14 +12,13 @@ import react from "@/assets/landing/icons/react.png";
 import view from "@/assets/landing/icons/view.png";
 import java from "@/assets/landing/icons/java.png";
 
-
 import gsap from "gsap";
 
-const FloatingTechLayout = ({ children }:any) => {
-  const techIcons:any = [
+const FloatingTechLayout = ({ children }: any) => {
+  const techIcons: any = [
     // Left side icons with different animation patterns
     {
-      src:node,
+      src: node,
       alt: "Node.js",
       className: "w-12 h-12 md:w-16 md:h-16 left-[5%] top-[15%]",
       pattern: "circular",
@@ -92,7 +91,7 @@ const FloatingTechLayout = ({ children }:any) => {
     },
   ];
 
-  const iconRefs:any = useRef<any>([]);
+  const iconRefs: any = useRef<any>([]);
 
   useEffect(() => {
     iconRefs.current = iconRefs.current.slice(0, techIcons.length);
@@ -101,7 +100,7 @@ const FloatingTechLayout = ({ children }:any) => {
     gsap.killTweensOf(iconRefs.current);
 
     // Create animations for each icon based on its pattern
-    iconRefs.current.forEach((icon:any, index:any) => {
+    iconRefs.current.forEach((icon: any, index: any) => {
       if (!icon) return;
 
       const pattern = techIcons[index].pattern;
@@ -177,10 +176,10 @@ const FloatingTechLayout = ({ children }:any) => {
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Floating icons layer */}
       <div className="absolute inset-0 pointer-events-none">
-        {techIcons.map((icon:any, index:any) => (
+        {techIcons.map((icon: any, index: any) => (
           <div
             key={icon.alt}
-            ref={(el:any) => (iconRefs.current[index] = el)}
+            ref={(el: any) => (iconRefs.current[index] = el)}
             className={`absolute ${icon.className} transition-transform will-change-transform`}
           >
             <div className="relative w-full h-full">
@@ -191,6 +190,7 @@ const FloatingTechLayout = ({ children }:any) => {
                 style={{ objectFit: "contain" }}
                 className="select-none"
                 priority={index < 4}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>

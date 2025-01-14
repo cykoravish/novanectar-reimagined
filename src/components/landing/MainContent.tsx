@@ -5,7 +5,8 @@ import techLife from "@/assets/landing/tech-life.png";
 import dotts from "@/assets/landing/dotted-background.png";
 import triangle from "@/assets/landing/triangleBackground.png";
 
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
+import gsap, { registerGSAPPlugins } from "@/lib/gsapUtils";
 import Image from "next/image";
 import { useEffect } from "react";
 import ServicesSection from "../services/ServicesSection";
@@ -21,6 +22,8 @@ import FloatingTechLayout from "./FloatingIcons";
 export const MainContent = () => {
   // Animation with GSAP
   useEffect(() => {
+    // Register GSAP plugins
+    registerGSAPPlugins();
     gsap.fromTo(
       ".grid-square",
       { opacity: 0, scale: 0 },
@@ -96,9 +99,10 @@ export const MainContent = () => {
                     <Image
                       src={dotts}
                       alt="Dots pattern"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                       className="opacity-50"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                 </motion.div>
@@ -115,8 +119,8 @@ export const MainContent = () => {
                     <Image
                       src={techLife}
                       alt="Digital solutions illustration"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                       priority
                     />
                   </div>
@@ -126,9 +130,10 @@ export const MainContent = () => {
                     <Image
                       src={triangle}
                       alt="Triangle pattern"
-                      layout="fill"
-                      objectFit="contain"
+                      fill
+                      style={{ objectFit: "contain" }}
                       className="opacity-50"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                 </motion.div>
