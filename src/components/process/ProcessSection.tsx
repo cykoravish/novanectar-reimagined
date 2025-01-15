@@ -100,7 +100,7 @@ export default function ProcessSection() {
       ),
     },
     {
-      title: "Testing",
+      title: "Quality Assurance",
       description:
         "Rigorous quality assurance to ensure your product is bug-free and performs optimally across all platforms.",
       icon: (
@@ -112,7 +112,7 @@ export default function ProcessSection() {
       ),
     },
     {
-      title: "Deployment",
+      title: "Operation",
       description:
         "Seamlessly deploying your project to production environments, ensuring smooth transitions and optimal performance.",
       icon: (
@@ -124,7 +124,7 @@ export default function ProcessSection() {
       ),
     },
     {
-      title: "Maintenance",
+      title: "Launch",
       description:
         "Providing ongoing support and updates to ensure your project remains secure, efficient, and up-to-date with the latest technologies.",
       icon: (
@@ -152,9 +152,11 @@ export default function ProcessSection() {
           className="opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/50 to-gray-900"></div>
-        
+
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-          <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-medium mb-8 sm:mb-12 text-start underline">Process</h2>
+          <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-medium mb-8 sm:mb-12 text-start underline">
+            Process
+          </h2>
           <div className="overflow-hidden">
             <motion.div
               style={{ x }}
@@ -177,4 +179,3 @@ export default function ProcessSection() {
     </div>
   );
 }
-

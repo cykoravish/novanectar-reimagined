@@ -2,32 +2,32 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import bg from "@/assets/testimonial/testimonial.jpg";
-import avatar1 from "@/assets/testimonial/avatar1.png";
+// import avatar1 from "@/assets/testimonial/avatar1.png";
 
 const testimonialData = [
   {
-    name: "Akash",
-    role: "Graphic Design",
+    name: "Rajesh Gupta",
+    role: "N.D. Garments",
     content:
-      "Novanectar designed a stunning logo for our brand—modern, memorable, and perfectly aligned with our vision.",
+      "Novanectar’s digital marketing services gave our brand a complete makeover. From social media marketing to pay-per-click campaigns, every strategy was tailored to our business. The results? Increased traffic, higher sales, and an engaged audience. Their commitment to excellence is unmatched.",
   },
   {
-    name: "Gaurav",
-    role: "Graphic Design",
+    name: "Muskan Rana",
+    role: "Yoga Digital Marketing",
     content:
-      "Their creative designs elevated our brand's visual identity. The attention to detail was truly impressive, happy with the outcome.",
+      "Novanectar’s expertise in digital marketing helped my yoga brand find its audience. They developed engaging content, managed social media platforms, and implemented SEO strategies that boosted my website traffic. The team’s understanding of wellness marketing was spot on!",
   },
   {
-    name: "savita",
-    role: "Digital Marketing",
+    name: "Suraj Kumar",
+    role: "WellOpportunityTechElixir.com",
     content:
-      "Novanectar's digital marketing strategies boosted our online presence and significantly increased our engagement and sales.",
+      "Novanectar transformed WellOpportunityTechElixir.com with its cutting-edge website development and digital marketing services. The website now boasts a sleek design, intuitive navigation, and faster loading speeds. Their comprehensive digital marketing approach, from keyword optimization to analytics, drove tangible results for our brand.",
   },
   {
-    name: "Pawan",
-    role: "Website Development",
+    name: "Prince Kumar",
+    role: "Techellixir.com",
     content:
-      "They built a sleek, user-friendly website for us. The seamless navigation impressed both us and our customers, and the functioning of the website is smooth, and error-free.",
+      "Novanectar developed a world-class website for Techellixir.com. They incorporated responsive design, smooth user interfaces, and advanced features tailored to my requirements. The team also guided me on SEO and future scalability, ensuring my website stays competitive. Their professionalism is truly commendable!",
   },
 ];
 
@@ -40,7 +40,12 @@ interface TestimonialCardProps {
   className?: string;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, role, content, className = "" }) => {
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
+  name,
+  role,
+  content,
+  className = "",
+}) => {
   const cardVariants = {
     initial: {
       opacity: 0,
@@ -68,7 +73,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, role, content, 
 
   return (
     <motion.div
-      className={`bg-white rounded-xl p-4 shadow-lg w-64 z-20 ${className}`}
+      className={`bg-white rounded-xl p-4 shadow-lg w-72 z-20 ${className}`}
       variants={cardVariants}
       initial="initial"
       animate="animate"
@@ -76,14 +81,22 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, role, content, 
     >
       <div className="flex items-center gap-3 mb-3">
         <div className="relative w-8 h-8 rounded-full overflow-hidden">
-          <Image
+          {/* <Image
             src={avatar1 || "/placeholder.svg"}
             alt="avatar"
             fill
             sizes="32px"
             className="object-cover"
             priority
-          />
+          /> */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="w-6 h-6"
+          >
+            <path d="M7 11a4 4 0 100-8 4 4 0 000 8zm1 2H3a1 1 0 00-1 1v2a3 3 0 003 3h2v-2H5a1 1 0 01-1-1v-1h4v-3zm9-2a4 4 0 100-8 4 4 0 000 8zm1 2h-5a1 1 0 00-1 1v2a3 3 0 003 3h2v-2h-1a1 1 0 01-1-1v-1h4v-3z" />
+          </svg>
         </div>
         <div>
           <h3 className="text-sm font-semibold text-gray-800">{name}</h3>
@@ -141,7 +154,7 @@ const TestimonialSection: React.FC = () => {
                   {...testimonial}
                   className={`absolute ${
                     index === 0
-                      ? "top-[15%] left-[10%]"
+                      ? "top-[8%] left-[10%]"
                       : index === 1
                       ? "top-[15%] right-[10%]"
                       : index === 2
@@ -177,4 +190,3 @@ const TestimonialSection: React.FC = () => {
 };
 
 export default TestimonialSection;
-
