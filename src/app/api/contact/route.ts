@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 
 // Connect to MongoDB
 const connectDB = async () => {
-    console.log("env access: ", process.env.NEXT_PUBLIC_MONGODB_URI)
   if (mongoose.connections[0].readyState) return;
   await mongoose.connect(process.env.NEXT_PUBLIC_MONGODB_URI as string);
 };
