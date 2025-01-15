@@ -16,7 +16,7 @@ const WhatsappIcon = () => {
         whileTap={{ scale: 0.9 }}
       >
         <Link
-          href="https://wa.me/989335689" // Replace with your WhatsApp number
+          href="https://wa.me/919893356890"
           target="_blank"
           rel="noopener noreferrer"
           className="block relative"
