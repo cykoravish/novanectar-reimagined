@@ -19,6 +19,7 @@ import FAQSection from "../faq/FaqSection";
 import FooterSection from "../footer/FooterSection";
 import FloatingTechLayout from "./FloatingIcons";
 import AboutSection from "../about/AboutSection";
+import { WhatsappIcon } from "../whatsapp/Whatsapp";
 
 export const MainContent = () => {
   // Animation with GSAP
@@ -195,6 +196,7 @@ export const MainContent = () => {
             <TestimonialSection />
             <FAQSection />
             <FooterSection />
+            <WhatsappIcon />
           </div>
         </div>
       </div>
