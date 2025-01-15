@@ -19,7 +19,7 @@ import FAQSection from "../faq/FaqSection";
 import FooterSection from "../footer/FooterSection";
 import FloatingTechLayout from "./FloatingIcons";
 import AboutSection from "../about/AboutSection";
-import { WhatsappIcon } from "../whatsapp/Whatsapp";
+import WhatsappIcon from "../whatsapp/Whatsapp";
 
 export const MainContent = () => {
   // Animation with GSAP
@@ -110,78 +110,6 @@ export const MainContent = () => {
             </p>
           </FloatingTechLayout>
           {/* //landing page end// */}
-
-          {/* about page start  */}
-          {/* <section className="w-full bg-white/65 min-h-screen py-16 px-4 md:px-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-             
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="space-y-6"
-                >
-                  <h2 className="text-3xl text-black font-bold underline">
-                    About
-                  </h2>
-                  <p className="text-gray-700 text-lg">
-                    We provide smart digital solutions to help your business
-                    grow.
-                  </p>
-                  <p className="text-gray-600">
-                    We specialize in a wide range of digital development,
-                    including UI/UX, Graphic Design, 2D/3D Illustration &
-                    Animation, Logo & Brand Identity Design, Web Development,
-                    App Development, SEO and more.
-                  </p>
-
-                
-                  <div className="relative w-32 h-32">
-                    <Image
-                      src={dotts}
-                      alt="Dots pattern"
-                      fill
-                      style={{ objectFit: "contain" }}
-                      className="opacity-50"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                </motion.div>
-
-              
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative"
-                >
-                
-                  <div className="relative w-full h-[400px]">
-                    <Image
-                      src={techLife}
-                      alt="Digital solutions illustration"
-                      fill
-                      style={{ objectFit: "contain" }}
-                      priority
-                    />
-                  </div>
-
-              
-                  <div className="absolute top-0 right-0 w-32 h-32">
-                    <Image
-                      src={triangle}
-                      alt="Triangle pattern"
-                      fill
-                      style={{ objectFit: "contain" }}
-                      className="opacity-50"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </section> */}
           <AboutSection />
           {/* about end  */}
           <div className="bg-[#f5f5fa] bg-opacity-50 h-[300rem] pt-16 text-black text-3xl text-center">
