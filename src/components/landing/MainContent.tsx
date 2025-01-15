@@ -187,7 +187,9 @@ export const MainContent = () => {
             <h1 className="font-semibold underline">Services</h1>
             <ServicesSection />
             <ProcessSection />
-            <ProjectSession />
+            <div id="project-section">
+              <ProjectSession />
+            </div>
             <WhyChooseUs />
             <ContactForm />
             <TestimonialSection />

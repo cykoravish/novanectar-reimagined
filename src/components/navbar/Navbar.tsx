@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
     label: "Services",
     items: [
       { label: "Website Development", href: "/services/web-development" },
-      { label: "Mobile Development", href: "/services/mobile-development" },
+      { label: "App Development", href: "/services/mobile-development" },
       { label: "Graphic Design", href: "/services/graphic-design" },
       { label: "Digital Marketing", href: "/services/digital-marketing" },
       { label: "Ecommerce", href: "/services/ecommerce" },
@@ -30,7 +30,7 @@ const navItems: NavItem[] = [
   },
   { href: "/", label: "Our Work" },
   {
-    href: "/",
+    href: "https://edu.novanectar.co.in/internships",
     label: "Internship",
     items: [
       {
@@ -63,6 +63,13 @@ export default function Navbar() {
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     if (isOpen) {
@@ -126,7 +133,11 @@ export default function Navbar() {
           {/* Center navigation items */}
           <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
             {navItems.map((item) => (
-              <NavItem key={item.label} item={item} />
+              <NavItem
+                key={item.label}
+                item={item}
+                scrollToSection={scrollToSection}
+              />
             ))}
           </div>
 
@@ -282,8 +293,20 @@ export default function Navbar() {
   );
 }
 
-function NavItem({ item }: { item: NavItem }) {
+function NavItem({
+  item,
+  scrollToSection,
+}: {
+  item: NavItem;
+  scrollToSection: (sectionId: string) => void;
+}) {
   const [isHovered, setIsHovered] = useState(false);
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (item.label === "Our Work") {
+      e.preventDefault();
+      scrollToSection("project-section");
+    }
+  };
   return (
     <div
       className="relative px-4"
@@ -293,6 +316,7 @@ function NavItem({ item }: { item: NavItem }) {
       <Link
         href={item.href}
         className="flex items-center space-x-1 py-2 text-gray-800 hover:text-blue-600 transition-colors"
+        onClick={handleClick}
       >
         <span>{item.label}</span>
         {item.items && (

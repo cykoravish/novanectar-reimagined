@@ -15,7 +15,7 @@ export default function AboutPage() {
         <h2 className="text-4xl font-medium text-gray-800 underline">About</h2>
         
         <div className="max-w-3xl">
-          <h1 className="text-4xl text-black sm:text-5xl font-medium leading-tight mb-6">
+          <h1 className="text-3xl text-black font-medium leading-tight mb-6">
             We provide smart digital solutions to help your business grow.
           </h1>
           
