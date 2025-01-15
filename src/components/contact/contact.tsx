@@ -83,17 +83,62 @@ const ContactForm = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10 pt-16">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-medium text-center mb-16"
+
+        
+      <motion.h1 
+      className="text-3xl md:text-4xl font-bold text-center mb-10"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      >
+        Start your{" "}
+      </motion.span>
+      <motion.span 
+        className="relative inline-block"
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
+        <motion.span 
+          className="text-blue-600"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
         >
-          Start your{" "}
-          <span className="text-blue-500 inline-block hover:scale-105 transition-transform cursor-pointer">
-            project
-          </span>{" "}
-          Today!
-        </motion.h1>
+          project
+        </motion.span>
+        <motion.svg 
+          viewBox="0 0 100 20" 
+          className="absolute -bottom-2 left-0 w-full h-2"
+          preserveAspectRatio="none"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.8, ease: "easeInOut" }}
+        >
+          <motion.path 
+            d="M0,10 Q50,10 85,8 T100,4"
+            stroke="currentColor"
+            strokeWidth="2"
+            fill="none"
+            className="text-blue-600"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ delay: 0.9, duration: 0.8, ease: "easeInOut" }}
+          />
+        </motion.svg>
+      </motion.span>
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
+        {" "}Today!
+      </motion.span>
+    </motion.h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Contact Info */}
