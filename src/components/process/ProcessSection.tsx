@@ -154,7 +154,7 @@ export default function ProcessSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/50 to-gray-900"></div>
         
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-          <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 text-center">Our Process</h2>
+          <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-medium mb-8 sm:mb-12 text-start">Our Process</h2>
           <div className="overflow-hidden">
             <motion.div
               style={{ x }}

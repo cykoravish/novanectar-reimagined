@@ -73,7 +73,7 @@ export const MainContent = () => {
   return (
     <>
       <div>
-        <div className="relative lg:h-[180rem] md:h-[205rem] h-[350rem] w-full dark:bg-black bg-white">
+        <div className="relative h-[350rem] w-full dark:bg-black bg-white">
           {/* Base grid */}
           <div className="absolute inset-0 dark:bg-grid-white/[0.2] bg-grid-black/[0.2]" />
 
@@ -183,7 +183,7 @@ export const MainContent = () => {
           </section> */}
           <AboutSection />
           {/* about end  */}
-          <div className="bg-blue-300 bg-opacity-50 h-[100rem] pt-16 text-black text-3xl text-center">
+          <div className="bg-[#f5f5fa] bg-opacity-50 h-[300rem] pt-16 text-black text-3xl text-center">
             <h1 className="font-semibold underline">Services</h1>
             <ServicesSection />
             <ProcessSection />

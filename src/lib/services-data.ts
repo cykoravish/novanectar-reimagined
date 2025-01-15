@@ -1,16 +1,28 @@
 import { StaticImageData } from "next/image";
 import graphicDesignIcon from "@/assets/services/graphicDesignIcon.png";
-import graphicDesign from "@/assets/services/graphicDesign.png";
 import mobileDevIcon from "@/assets/services/mobileDevIcon.png";
-import mobileDev from "@/assets/services/mobileDev.png";
-import webDev from "@/assets/services/webDev.png";
 import webDevIcon from "@/assets/services/webDevIcon.png";
-import eComm from "@/assets/services/eComm.png";
 import eCommLogo from "@/assets/services/eCommLogo.png";
 import digitalMarkLogo from "@/assets/services/digitalMarkLogo.png";
-import digitalMarketing from "@/assets/services/digitalMarketing.png";
 import seoLogo from "@/assets/services/seoLogo.png";
+
+// main card center image imports//
 import seo from "@/assets/services/seo.png";
+import mobileDev from "@/assets/services/mobileDev.png";
+import webDev from "@/assets/services/webDev.png";
+import eComm from "@/assets/services/eComm.png";
+import digitalMarketing from "@/assets/services/digitalMarketing.png";
+import graphicDesign from "@/assets/services/graphicDesign.png";
+
+// import seo from "@/assets/services/main/seo.png";
+// import mobileDev from "@/assets/services/main/mobileDev.png";
+// import webDev from "@/assets/services/main/webDev.png";
+// import eComm from "@/assets/services/main/eComm.png";
+// import digitalMarketing from "@/assets/services/main/digitalMarketing.png";
+// import graphicDesign from "@/assets/services/main/graphicDesign.png";
+
+
+////////////////////////////////////////////////////////////////////////////////////
 
 import graphicDesignCover from "@/assets/services/info/graphicDesign.jpg";
 import digitalMarketingCover from "@/assets/services/info/digitalMarketing.jpg";
@@ -40,7 +52,7 @@ export const services: Service[] = [
     id: "graphic-design",
     title: "Graphic Design",
     description:
-      "Transform your brand's vision into a captivating masterpiece that speaks volumes with just a glance. Let your logo do the talking, while you do the business!",
+      "Create visually stunning designs tailored to your brand, ensuring a professional and creative edge in every project.",
     detailedDescription: `We understand the power of exceptional design in telling your story. Great designs inspire, connect, & leave a lasting impression and that’s exactly what Novanectar Services Private Limited deliver. From striking logos to captivating social media graphics, we transform ideas into visuals that elevate your brand’s identity and presence. Whether you're starting fresh or reimagining your identity, our creative team works tirelessly to craft designs that resonate, engage, and inspire your audience.`,
     icon: graphicDesignIcon,
     image: graphicDesign,
@@ -80,9 +92,9 @@ export const services: Service[] = [
   },
   {
     id: "mobile-development",
-    title: "Mobile Development",
+    title: "App Development",
     description:
-      "Transform your brand's vision into a captivating masterpiece that speaks volumes with just a glance. Let your logo do the talking, while you do the business!",
+      "Build innovative and user-friendly mobile applications to meet your business needs and enhance customer engagement.",
     detailedDescription:
       "In a world dominated by mobile-first experiences, Novanectar Services Private Limited brings your app ideas to life with unmatched creativity and precision. We specialize in crafting innovative, high-performance mobile applications tailored to your business goals. From captivating designs to cutting-edge functionality, our apps are built to impress, engage, and scale effortlessly. Our ultimate goal is to turn your vision into a seamless digital experience that connects, captivates, and drives success.",
     icon: mobileDevIcon,
@@ -125,7 +137,7 @@ export const services: Service[] = [
     id: "web-development",
     title: "Website Development",
     description:
-      "Transform your brand's vision into a captivating masterpiece that speaks volumes with just a glance. Let your logo do the talking, while you do the business!",
+      "Design responsive, visually appealing, and functional websites that deliver an exceptional user experience.",
     detailedDescription:
       "In the ever-evolving digital era, powerful web applications are the backbone of modern businesses and Novanectar Services Private Limited is your trusted partner in crafting them. We bring innovative ideas, expertise, and precision to create dynamic, user-centric web applications that redefine efficiency and engagement. From seamless functionality to scalable designs, our solutions empower your business to thrive in the digital landscape. Turning your ideas into impactful web applications that drive success is our sole objective.",
     icon: webDevIcon,
@@ -168,7 +180,7 @@ export const services: Service[] = [
     id: "ecommerce",
     title: "Ecommerce",
     description:
-      "Transform your brand's vision into a captivating masterpiece that speaks volumes with just a glance. Let your logo do the talking, while you do the business!",
+      "Develop robust e-commerce platforms to boost your online presence and streamline your business operations.",
     detailedDescription:
       "Novanectar Services Private Limited creates dynamic e-commerce solutions designed to boost your sales and enhance customer experiences. Our team blends innovative technology with intuitive design to build secure, scalable online stores. Whether you're starting a new venture or scaling up, we provide tailored solutions that ensure smooth transactions, easy navigation, and seamless integration across platforms. Our vision is to help you turn your e-commerce vision into a thriving business.",
     icon: eCommLogo,
@@ -211,7 +223,7 @@ export const services: Service[] = [
     id: "seo",
     title: "SEO",
     description:
-      "Transform your brand's vision into a captivating masterpiece that speaks volumes with just a glance. Let your logo do the talking, while you do the business!",
+      "Optimize your online content to improve visibility, attract organic traffic, and enhance your search engine rankings.",
     detailedDescription:
       "Novanectar Services Private Limited specializes in transforming your online presence with powerful SEO strategies tailored to your business goals. From keyword optimization to technical enhancements, we ensure your website ranks higher, attracts the right audience, and drives sustainable growth. Our dedicated team leverages proven techniques and innovative tools to deliver measurable results. With us, your website won’t just compete—it will lead the search engine game.",
     icon: seoLogo,
@@ -254,7 +266,7 @@ export const services: Service[] = [
     id: "digital-marketing",
     title: "Digital Marketing",
     description:
-      "Transform your brand's vision into a captivating masterpiece that speaks volumes with just a glance. Let your logo do the talking, while you do the business!",
+      "Provide strategic and effective marketing campaigns to promote your brand and drive measurable growth.",
     detailedDescription:
       "In the fast-paced digital age, standing out online is more than just a challenge. It is an art, and Novanectar Services Private Limited, masters this art with innovative digital marketing solutions tailored to your unique goals. From crafting engaging content to running data-driven campaigns, we help your brand connect with the right audience, foster meaningful relationships, and drive measurable growth. Our aim is to transform your digital presence into a powerful success story.",
     icon: digitalMarkLogo,

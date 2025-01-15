@@ -95,7 +95,7 @@ const FAQItem = ({ faq, isOpen, onClick, isHovered, onHover, onHoverEnd }:any) =
             }}
             className="overflow-hidden"
           >
-            <p className="text-gray-300 mt-3 text-sm leading-relaxed pr-8">
+            <p className="text-gray-300 text-start mt-3 text-sm leading-relaxed pr-8">
               {faq.answer}
             </p>
           </motion.div>
