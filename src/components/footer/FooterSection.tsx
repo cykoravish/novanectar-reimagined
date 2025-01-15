@@ -1,28 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ellipse from "@/assets/footer/ellipse.png";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const FooterSection = () => {
-  const footerRef = useRef<any>(null);
+  const footerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // GSAP animation for the floating ellipses
-    const ellipses = footerRef.current.querySelectorAll(".ellipse");
-    gsap.to(ellipses, {
-      y: -20,
-      duration: 2,
-      ease: "power1.inOut",
-      yoyo: true,
-      repeat: -1,
-      stagger: {
-        each: 0.5,
-        from: "random",
-      },
-    });
+    if (footerRef.current) {
+      const ellipses = footerRef.current.querySelectorAll(".ellipse");
+      gsap.to(ellipses, {
+        y: -20,
+        duration: 2,
+        ease: "power1.inOut",
+        yoyo: true,
+        repeat: -1,
+        stagger: {
+          each: 0.5,
+          from: "random",
+        },
+      });
+    }
   }, []);
 
   const linkVariants = {
@@ -34,6 +35,29 @@ const FooterSection = () => {
     },
   };
 
+  const socialIcons = [
+    {
+      name: "Facebook",
+      icon: Facebook,
+      href: "https://www.facebook.com/share/a6ob9vX4d6uEAd3B/?mibextid=qi2Omg",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      href: "https://www.instagram.com/novanectar_services_pvt.ltd?igsh=MXRoaHN3MGM5czYxZw==",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/novanectar/",
+    },
+    {
+      name: "YouTube",
+      icon: Youtube,
+      href: "https://youtube.com/@novanectarservicespvt.ltd.?si=NVJY1MQc_NfoVoSi",
+    },
+  ];
+
   return (
     <footer
       ref={footerRef}
@@ -42,7 +66,7 @@ const FooterSection = () => {
       {/* Floating Ellipses */}
       <div className="absolute left-0 top-0 ellipse">
         <Image
-          src={ellipse}
+          src={ellipse || "/placeholder.svg"}
           alt="Decorative ellipse"
           width={100}
           height={100}
@@ -51,7 +75,7 @@ const FooterSection = () => {
       </div>
       <div className="absolute right-0 bottom-0 ellipse">
         <Image
-          src={ellipse}
+          src={ellipse || "/placeholder.svg"}
           alt="Decorative ellipse"
           width={100}
           height={100}
@@ -60,9 +84,9 @@ const FooterSection = () => {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {/* Company Info */}
-          <div className="md:col-span-1">
+          <div className="col-span-1 sm:col-span-2 md:col-span-1">
             <h2 className="text-2xl font-medium mb-4">NOVANECTAR</h2>
             <p className="text-sm text-gray-400">IT Services & IT Consulting</p>
             <div className="mt-4">
@@ -73,7 +97,7 @@ const FooterSection = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-sm font-medium mb-4">QUICK LINKS</h3>
             <ul className="space-y-2">
               {["Home", "About", "Services"].map((item) => (
@@ -95,7 +119,7 @@ const FooterSection = () => {
           </div>
 
           {/* Solutions */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-sm font-medium mb-4">SOLUTIONS</h3>
             <ul className="space-y-2">
               {[
@@ -123,31 +147,29 @@ const FooterSection = () => {
             </ul>
           </div>
 
-          {/* Career */}
-          <div className="md:col-span-1">
-            <h3 className="text-sm font-medium mb-4">CAREER</h3>
-            <ul className="space-y-2">
-              {["Jobs", "Internship", "Training"].map((item) => (
-                <motion.li
-                  key={item}
-                  variants={linkVariants}
-                  whileHover="hover"
-                  className="text-sm"
-                >
-                  <Link
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    {item}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal & Social */}
-          <div className="md:col-span-1">
+          {/* Career and Legal */}
+          <div>
             <div className="mb-8">
+              <h3 className="text-sm font-medium mb-4">CAREER</h3>
+              <ul className="space-y-2">
+                {["Jobs", "Internship", "Training"].map((item) => (
+                  <motion.li
+                    key={item}
+                    variants={linkVariants}
+                    whileHover="hover"
+                    className="text-sm"
+                  >
+                    <Link
+                      href="#"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+            <div>
               <h3 className="text-sm font-medium mb-4">LEGAL</h3>
               <ul className="space-y-2">
                 {["Privacy Policy", "Terms of Service"].map((item) => (
@@ -167,25 +189,25 @@ const FooterSection = () => {
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="text-sm font-medium mb-4">FOLLOW US</h3>
-              <ul className="space-y-2">
-                {["LinkedIn", "Instagram", "Facebook"].map((item) => (
-                  <motion.li
-                    key={item}
-                    variants={linkVariants}
-                    whileHover="hover"
-                    className="text-sm"
-                  >
-                    <Link
-                      href="#"
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
+          </div>
+
+          {/* Follow Us */}
+          <div className="col-span-1 sm:col-span-2 md:col-span-1">
+            <h3 className="text-sm font-medium mb-4">FOLLOW US</h3>
+            <div className="flex flex-wrap gap-4">
+              {socialIcons.map((social) => (
+                <motion.a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  variants={linkVariants}
+                  whileHover="hover"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <social.icon className="w-6 h-6" />
+                  <span className="sr-only">{social.name}</span>
+                </motion.a>
+              ))}
             </div>
           </div>
         </div>
