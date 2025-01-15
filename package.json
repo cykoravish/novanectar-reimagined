@@ -14,9 +14,11 @@
     "gsap": "^3.12.5",
     "lucide-react": "^0.469.0",
     "mini-svg-data-uri": "^1.4.4",
+    "mongoose": "^8.9.5",
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
