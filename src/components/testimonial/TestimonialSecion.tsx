@@ -2,20 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import bg from "@/assets/testimonial/testimonial.jpg";
-// import avatar1 from "@/assets/testimonial/avatar1.png";
 
 const testimonialData = [
   {
     name: "Rajesh Gupta",
     role: "N.D. Garments",
     content:
-      "Novanectar’s digital marketing services gave our brand a complete makeover. From social media marketing to pay-per-click campaigns, every strategy was tailored to our business. The results? Increased traffic, higher sales, and an engaged audience. Their commitment to excellence is unmatched.",
+      "Novanectar's digital marketing services gave our brand a complete makeover. From social media marketing to pay-per-click campaigns, every strategy was tailored to our business. The results? Increased traffic, higher sales, and an engaged audience. Their commitment to excellence is unmatched.",
   },
   {
     name: "Muskan Rana",
     role: "Yoga Digital Marketing",
     content:
-      "Novanectar’s expertise in digital marketing helped my yoga brand find its audience. They developed engaging content, managed social media platforms, and implemented SEO strategies that boosted my website traffic. The team’s understanding of wellness marketing was spot on!",
+      "Novanectar's expertise in digital marketing helped my yoga brand find its audience. They developed engaging content, managed social media platforms, and implemented SEO strategies that boosted my website traffic. The team's understanding of wellness marketing was spot on!",
   },
   {
     name: "Suraj Kumar",
@@ -71,12 +70,23 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
     },
   };
 
+  // Generate random floating animation parameters
+  const floatingAnimation:any = {
+    y: ["-10px", "10px"],
+    transition: {
+      duration: Math.random() * 2 + 3, // Random duration between 3-5 seconds
+      repeat: Infinity,
+      repeatType: "reverse" as const,
+      ease: "easeInOut",
+    },
+  };
+
   return (
     <motion.div
       className={`bg-white rounded-xl p-4 shadow-lg w-72 z-20 ${className}`}
       variants={cardVariants}
       initial="initial"
-      animate="animate"
+      animate={["animate", floatingAnimation]}
       whileHover="hover"
     >
       <div className="flex items-center gap-3 mb-3">
