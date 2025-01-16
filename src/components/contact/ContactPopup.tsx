@@ -44,7 +44,6 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
   }, [isOpen]);
 
   const onSubmit = async (data: FormData) => {
-    console.log(data);
     // Here you can implement your API logic to send the form data
 
     setIsSubmitting(true);
