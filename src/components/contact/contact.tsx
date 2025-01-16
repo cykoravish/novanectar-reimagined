@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { DMSans } from "@/fonts/font";
 
 interface IFormInput {
   name: string;
@@ -74,7 +75,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-white overflow-hidden p-4">
+    <div className={`relative min-h-screen bg-white overflow-hidden p-4 ${DMSans.className}`}>
       {/* Background Grid */}
       <div className="absolute inset-0 grid grid-cols-6 grid-rows-6">
         {[...Array(35)].map((_, i) => (

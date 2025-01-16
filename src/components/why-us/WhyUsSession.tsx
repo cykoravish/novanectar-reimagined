@@ -9,6 +9,7 @@ import customization from "@/assets/whyUs/customization.png";
 import expertTeam from "@/assets/whyUs/expert-team.png";
 import support from "@/assets/whyUs/support.png";
 import delivery from "@/assets/whyUs/delivery.png";
+import { DMSans } from "@/fonts/font";
 
 const features = [
   {
@@ -58,7 +59,7 @@ const bottomFeatures = [
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-[#F8F9FA] py-16 px-4 sm:px-6 lg:px-8">
+    <div className={`bg-[#F8F9FA] py-16 px-4 sm:px-6 lg:px-8 ${DMSans.className}`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -71,7 +72,7 @@ const WhyChooseUs = () => {
 
         <div className="space-y-16">
           {/* Top Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-32">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.id}
@@ -99,7 +100,7 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Bottom Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-32">
             {bottomFeatures.map((feature, index) => (
               <motion.div
                 key={feature.id}

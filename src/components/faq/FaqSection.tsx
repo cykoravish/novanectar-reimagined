@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
+import { DMSans } from '@/fonts/font';
 
 const faqs = [
   {
@@ -110,7 +111,7 @@ const FAQSection = () => {
   const [hoveredId, setHoveredId] = useState<any>(null);
 
   return (
-    <div className="min-h-screen bg-[#0B2341] px-4 py-12 md:p-12 lg:p-16">
+    <div className={`min-h-screen bg-[#0B2341] px-4 py-12 md:p-12 lg:p-16 ${DMSans.className}`}>
       <div className="max-w-7xl mx-auto">
         {/* Split layout container */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">

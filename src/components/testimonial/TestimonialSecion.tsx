@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import bg from "@/assets/testimonial/testimonial.jpg";
+import { DMSans } from "@/fonts/font";
 
 const testimonialData = [
   {
@@ -83,7 +84,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
   return (
     <motion.div
-      className={`bg-white rounded-xl p-4 shadow-lg w-72 z-20 ${className}`}
+      className={`bg-white text-start rounded-xl p-4 shadow-lg w-80 z-20 ${className} ${DMSans.className}`}
       variants={cardVariants}
       initial="initial"
       animate={["animate", floatingAnimation]}
@@ -105,7 +106,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           <p className="text-xs text-gray-600">{role}</p>
         </div>
       </div>
-      <p className="text-xs text-gray-700 leading-relaxed">{content}</p>
+      <p className="text-sm text-gray-800 leading-relaxed">{content}</p>
     </motion.div>
   );
 };
@@ -156,12 +157,12 @@ const TestimonialSection: React.FC = () => {
                   {...testimonial}
                   className={`absolute ${
                     index === 0
-                      ? "top-[8%] left-[10%]"
+                      ? "top-[0%] left-[8%]"
                       : index === 1
-                      ? "top-[15%] right-[10%]"
+                      ? "top-[5%] right-[10%]"
                       : index === 2
                       ? "top-[45%] left-[15%]"
-                      : "bottom-[15%] right-[15%]"
+                      : "bottom-[1%] right-[15%]"
                   }`}
                 />
               ))}

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import ellipse from "@/assets/footer/ellipse.png";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { DMSans } from "@/fonts/font";
 
 const FooterSection = () => {
   const footerRef = useRef<HTMLElement>(null);
@@ -62,7 +63,7 @@ const FooterSection = () => {
   return (
     <footer
       ref={footerRef}
-      className="relative bg-[#020817] text-white py-16 overflow-hidden"
+      className={`relative bg-[#020817] text-white py-16 overflow-hidden ${DMSans.className}`}
     >
       {/* Floating Ellipses */}
       <div className="absolute left-0 top-0 ellipse">

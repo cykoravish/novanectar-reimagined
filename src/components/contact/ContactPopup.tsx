@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { X, Mail, Phone } from "lucide-react";
+import toast from "react-hot-toast";
 
 interface FormData {
   name: string;
@@ -25,6 +26,12 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
     formState: { errors },
     reset,
   } = useForm<FormData>();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -36,9 +43,33 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
     };
   }, [isOpen]);
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     console.log(data);
     // Here you can implement your API logic to send the form data
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        toast.success("Form Submitter Successfully")
+        reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.log("error in api call:", error);
+      setSubmitStatus("error");
+    }
+    setIsSubmitting(false);
+
     reset();
     onClose();
   };
@@ -194,12 +225,22 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
                   </p>
                 )}
               </div>
-              <button
-                type="submit"
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                type="submit"
+                disabled={isSubmitting}
               >
-                Submit
-              </button>
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </motion.button>
+              {submitStatus === 'success' && (
+                <p className="text-green-500 text-center">Form submitted successfully!</p>
+              )}
+              {submitStatus === 'error' && (
+                <p className="text-red-500 text-center">An error occurred. Please try again.</p>
+              )}
             </form>
             <div className="mt-6 space-y-2">
               <div className="flex items-center space-x-2">
