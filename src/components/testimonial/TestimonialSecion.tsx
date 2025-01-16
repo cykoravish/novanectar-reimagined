@@ -81,14 +81,6 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
     >
       <div className="flex items-center gap-3 mb-3">
         <div className="relative w-8 h-8 rounded-full overflow-hidden">
-          {/* <Image
-            src={avatar1 || "/placeholder.svg"}
-            alt="avatar"
-            fill
-            sizes="32px"
-            className="object-cover"
-            priority
-          /> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

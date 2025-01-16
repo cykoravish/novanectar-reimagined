@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Service } from "@/lib/services-data";
+import { DMSans } from "@/fonts/font";
 
 type ServiceCardProps = Service;
 
@@ -55,7 +56,7 @@ export default function ServiceCard({
           {title}
         </motion.h3>
 
-        <p className="text-center text-gray-600 text-xl">{description}</p>
+        <p className={`text-center text-gray-600 text-xl ${DMSans}`}>{description}</p>
 
         <motion.div
           className="absolute inset-x-0 bottom-0 h-1 bg-blue-500"

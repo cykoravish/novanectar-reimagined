@@ -21,6 +21,9 @@ import FloatingTechLayout from "./FloatingIcons";
 import AboutSection from "../about/AboutSection";
 import WhatsappIcon from "../whatsapp/Whatsapp";
 
+//fonts
+import { DMSans, WorkSans } from "@/fonts/font";
+
 export const MainContent = () => {
   // Animation with GSAP
   useEffect(() => {
@@ -86,21 +89,21 @@ export const MainContent = () => {
           {/* //landing page// */}
           <FloatingTechLayout>
             <div className="w-5xl pt-28 px-2 text-center">
-              <h1 className="text-black text-3xl md:text-5xl sm:text-4xl max-w-4xl mx-auto font-bold">
+              <h1 className={`text-black text-3xl md:text-5xl sm:text-4xl max-w-4xl mx-auto font-bold ${WorkSans.className}`}>
                 We Build Success Stories Not Just Websites
               </h1>
             </div>
             <div className="pt-10 text-center px-2 max-w-xl mx-auto">
-              <p className="text-black text-center font-medium text-sm md:text-base lg:text-lg">
+              <p className={`text-black text-center font-medium text-sm md:text-base lg:text-lg ${DMSans}`}>
                 Transform your business with powerful digital strategies
                 designed for real world results
               </p>
             </div>
             <div className="flex pt-10 px-2 justify-center gap-4">
-              <button className="bg-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-white text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95">
+              <button className={`bg-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-white text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95 ${DMSans}`}>
                 Get Started Today
               </button>
-              <button className="border border-blue-500 text-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:text-white hover:bg-blue-500 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95 bg-white">
+              <button className={`border border-blue-500 text-blue-500 px-4 py-2 sm:px-5 sm:py-2 text-sm sm:text-base rounded-md font-medium shadow-md transition-transform transform hover:scale-105 hover:text-white hover:bg-blue-500 focus:ring-2 focus:ring-blue-400 focus:outline-none active:scale-95 bg-white ${DMSans}`}>
                 Schedule a Free Consultation
               </button>
             </div>

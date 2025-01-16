@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -84,9 +85,9 @@ const FooterSection = () => {
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Company Info */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-1">
+          <div className="col-span-2 sm:col-span-2 md:col-span-1 md:text-start">
             <h2 className="text-2xl font-medium mb-4">NOVANECTAR</h2>
             <p className="text-sm text-gray-400">IT Services & IT Consulting</p>
             <div className="mt-4">
@@ -97,7 +98,7 @@ const FooterSection = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="md:text-start">
             <h3 className="text-sm font-medium mb-4">QUICK LINKS</h3>
             <ul className="space-y-2">
               {["Home", "About", "Services"].map((item) => (
@@ -119,7 +120,7 @@ const FooterSection = () => {
           </div>
 
           {/* Solutions */}
-          <div>
+          <div className="md:text-start">
             <h3 className="text-sm font-medium mb-4">SOLUTIONS</h3>
             <ul className="space-y-2">
               {[
@@ -148,7 +149,7 @@ const FooterSection = () => {
           </div>
 
           {/* Career and Legal */}
-          <div>
+          <div className="md:text-start">
             <div className="mb-8">
               <h3 className="text-sm font-medium mb-4">CAREER</h3>
               <ul className="space-y-2">
@@ -192,7 +193,7 @@ const FooterSection = () => {
           </div>
 
           {/* Follow Us */}
-          <div className="col-span-1 sm:col-span-2 md:col-span-1">
+          <div className="col-span-1 sm:col-span-2 md:col-span-1 md:text-start">
             <h3 className="text-sm font-medium mb-4">FOLLOW US</h3>
             <div className="flex flex-wrap gap-4">
               {socialIcons.map((social) => (

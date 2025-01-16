@@ -2,6 +2,7 @@ import { use } from "react";
 import Image from "next/image";
 import { getServiceById } from "@/lib/services-data";
 import ServiceContent from "@/components/services/ServiceContent";
+import FooterSection from "@/components/footer/FooterSection";
 
 export default function ServicePage({
   params,
@@ -31,7 +32,7 @@ export default function ServicePage({
         />
       </div>
       <ServiceContent service={service} />
-      {/* <FooterSection /> */}
+      <FooterSection />
     </main>
   );
 }
