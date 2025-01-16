@@ -6,33 +6,33 @@ import { DMSans } from '@/fonts/font';
 const faqs = [
   {
     id: 1,
-    question: "What services does NovaNectar provide?",
-    answer: "We provide comprehensive digital solutions including web development, mobile app development, UI/UX design, digital marketing, and custom software development. Our team specializes in creating innovative solutions tailored to your business needs."
+    question: "Website Development",
+    answer: "Bringing your ideal website to life with the latest technologies and coding practices, ensuring robust, scalable, and responsive designs that provide exceptional user experiences."
   },
   {
     id: 2,
-    question: "What services does NovaNectar provide?",
-    answer: "Our expertise extends to cloud computing, AI/ML integration, e-commerce solutions, and enterprise software development. We work closely with clients to understand their requirements and deliver scalable solutions."
+    question: "App Development: ",
+    answer: "Creating custom mobile solutions from concept to launch to drive engagement and enhance user experience, helping businesses streamline operations and boost customer loyalty."
   },
   {
     id: 3,
-    question: "What services does NovaNectar provide?",
-    answer: "From startup consultation to enterprise-level digital transformation, we offer end-to-end services. This includes strategic planning, implementation, maintenance, and ongoing support for all your digital needs."
+    question: "Search Engine Optimization (SEO)",
+    answer: "Employing cutting-edge techniques to optimize website content and strategic link-building, boosting online visibility and attracting more organic traffic to stay ahead of the competition."
   },
   {
     id: 4,
-    question: "What services does NovaNectar provide?",
-    answer: "We specialize in creating custom digital solutions that help businesses grow. Our services include website development, app creation, digital marketing, and technology consulting."
+    question: "Graphic Design",
+    answer: "Crafting visually striking assets, including eye-catching logos and compelling brand identities, to transform your brand and resonate with your audience."
   },
   {
     id: 5,
-    question: "What services does NovaNectar provide?",
-    answer: "Our team provides full-stack development services, cloud solutions, and digital transformation strategies. We focus on delivering innovative solutions that drive business growth."
+    question: "UI/UX Design",
+    answer: "Focusing on creating visually appealing and easy-to-use interfaces, ensuring designs deliver intuitive and engaging experiences across web, mobile, or desktop platforms."
   },
   {
     id: 6,
-    question: "What services does NovaNectar provide?",
-    answer: "We offer comprehensive digital services including web development, mobile applications, cloud solutions, and digital marketing strategies tailored to your business goals."
+    question: "Digital Marketing",
+    answer: "Offering comprehensive services such as strategic social media campaigns and targeted PPC advertising to drive traffic, generate leads, and maximize ROI for businesses of all sizes."
   }
 ];
 
@@ -127,7 +127,7 @@ const FAQSection = () => {
             </motion.h2>
             
             <motion.h1 
-              className="text-white text-3xl md:text-4xl font-semibold mb-6 max-w-xl"
+              className="text-white text-3xl md:text-4xl font-semibold mb-6 max-w-xl text-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -136,12 +136,12 @@ const FAQSection = () => {
             </motion.h1>
             
             <motion.p 
-              className="text-gray-300 text-sm leading-relaxed max-w-xl"
+              className="text-gray-300 text-sm leading-relaxed text-start max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              We&apos;re not just another agency-we&apos;re your digital growth partners. With years of industry experience and a passion for innovation, our team is dedicated to delivering measurable results propel your business forward
+              NovaNectar Services Pvt. Ltd is an IT solutions based Start-up company which offers a comprehensive suite of digital solutions tailored to elevate and transform businesses in the digital age. 
             </motion.p>
           </div>
 

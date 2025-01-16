@@ -58,7 +58,7 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
 
       if (response.ok) {
         setSubmitStatus("success");
-        toast.success("Form Submitter Successfully")
+        toast.success("Form Submitter Successfully");
         reset();
       } else {
         setSubmitStatus("error");
@@ -234,11 +234,15 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </motion.button>
-              {submitStatus === 'success' && (
-                <p className="text-green-500 text-center">Form submitted successfully!</p>
+              {submitStatus === "success" && (
+                <p className="text-green-500 text-center">
+                  Form submitted successfully!
+                </p>
               )}
-              {submitStatus === 'error' && (
-                <p className="text-red-500 text-center">An error occurred. Please try again.</p>
+              {submitStatus === "error" && (
+                <p className="text-red-500 text-center">
+                  An error occurred. Please try again.
+                </p>
               )}
             </form>
             <div className="mt-6 space-y-2">
@@ -248,7 +252,8 @@ export function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-gray-700" />
-                <span className="text-gray-700">+91 9893 3568 90</span>
+                <span className="text-gray-900 text-sm">+91 8979891703</span>
+                <span className="text-gray-900 text-sm">+91 8979891705</span>
               </div>
             </div>
           </motion.div>
