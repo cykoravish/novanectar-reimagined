@@ -48,12 +48,12 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    href: "/",
+    href: "https://edu.novanectar.co.in",
     label: "Training",
     items: [
-      { label: "Frontend Development", href: "/" },
-      { label: "Backend Development", href: "/" },
-      { label: "Full Stack Development", href: "/" },
+      { label: "Frontend Development", href: "https://edu.novanectar.co.in" },
+      { label: "Backend Development", href: "https://edu.novanectar.co.in" },
+      { label: "Full Stack Development", href: "https://edu.novanectar.co.in" },
     ],
   },
 ];

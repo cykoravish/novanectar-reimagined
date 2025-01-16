@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import bgImage from "@/assets/pocess/bg.png";
@@ -59,13 +59,50 @@ const ServiceCard = ({ title, description, icon }: any) => {
 
 export default function ProcessSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [scrollRange, setScrollRange] = useState("-100%");
+
+  /////////////adjusting view porth width dynamically/////////
+
+  useEffect(() => {
+    const updateScrollRange = () => {
+      if (window.innerWidth < 480) {
+        // Very small screens (e.g., small mobile)
+        setScrollRange("-600%"); // Scroll more for tighter spaces
+      } else if (window.innerWidth < 640) {
+        // Small screens (mobile)
+        setScrollRange("-400%");
+      } else if (window.innerWidth < 768) {
+        // Large mobile or small tablets
+        setScrollRange("-320%");
+      } else if (window.innerWidth < 1024) {
+        // Tablets
+        setScrollRange("-230%");
+      } else if (window.innerWidth < 1440) {
+        // Small desktops or laptops
+        setScrollRange("-150%");
+      } else {
+        // Large screens (desktops)
+        setScrollRange("-100%");
+      }
+    };
+
+    updateScrollRange();
+    window.addEventListener("resize", updateScrollRange);
+
+    return () => {
+      window.removeEventListener("resize", updateScrollRange);
+    };
+  }, []);
+
+  /////////////end//////////////////////////////////////////////////
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  // const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", scrollRange]);
 
   const services = [
     {
