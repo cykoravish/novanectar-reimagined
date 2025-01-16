@@ -6,24 +6,25 @@ import eCommLogo from "@/assets/services/eCommLogo.png";
 import digitalMarkLogo from "@/assets/services/digitalMarkLogo.png";
 import seoLogo from "@/assets/services/seoLogo.png";
 
-// main card center image imports//
-import seo from "@/assets/services/seo.png";
-import mobileDev from "@/assets/services/mobileDev.png";
-import webDev from "@/assets/services/webDev.png";
-import eComm from "@/assets/services/eComm.png";
-import digitalMarketing from "@/assets/services/digitalMarketing.png";
-import graphicDesign from "@/assets/services/graphicDesign.png";
+// main card center image imports/ faulty images/
+// import seo from "@/assets/services/seo.png";
+// import mobileDev from "@/assets/services/mobileDev.png";
+// import webDev from "@/assets/services/webDev.png";
+// import eComm from "@/assets/services/eComm.png";
+// import digitalMarketing from "@/assets/services/digitalMarketing.png";
+// import graphicDesign from "@/assets/services/graphicDesign.png";
 
-// import seo from "@/assets/services/main/seo.png";
-// import mobileDev from "@/assets/services/main/mobileDev.png";
-// import webDev from "@/assets/services/main/webDev.png";
-// import eComm from "@/assets/services/main/eComm.png";
-// import digitalMarketing from "@/assets/services/main/digitalMarketing.png";
-// import graphicDesign from "@/assets/services/main/graphicDesign.png";
+// main card center image imports/ corected images/
+import seo from "@/assets/services/main/seo.png";
+import mobileDev from "@/assets/services/main/mobileDev.png";
+import webDev from "@/assets/services/main/webDev.png";
+import eComm from "@/assets/services/main/eComm.png";
+import digitalMarketing from "@/assets/services/main/digitalMarketing.png";
+import graphicDesign from "@/assets/services/main/graphicDesign.png";
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-
+// details page cover images
 import graphicDesignCover from "@/assets/services/info/graphicDesign.jpg";
 import digitalMarketingCover from "@/assets/services/info/digitalMarketing.jpg";
 import eCommCover from "@/assets/services/info/eComm.jpg";

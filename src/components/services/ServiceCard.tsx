@@ -24,11 +24,11 @@ export default function ServiceCard({
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative bg-white rounded-lg shadow-lg overflow-hidden group p-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+        className="relative bg-white rounded-lg shadow-lg overflow-hidden group pb-6 hover:shadow-xl transition-shadow duration-300 cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
+        <div className="relative h-80 mb-6 overflow-hidden rounded-lg">
           <Image
             src={image}
             alt={title}
@@ -38,25 +38,27 @@ export default function ServiceCard({
           />
         </div>
 
-        <div className="flex items-center justify-center w-32 h-20 mx-auto mb-6">
+        <div className="flex items-center justify-center w-32 h-20 mx-auto mb-6 absolute top-[19rem] left-1/2 -translate-x-1/2">
           <Image
             src={icon}
             alt={`${title} icon`}
-            width={200}
-            height={200}
+            width={150}
+            height={150}
             className="transition-transform duration-300 group-hover:scale-110 border-8 border-blue-300 rounded-full"
           />
         </div>
 
         <motion.h3
-          className="mb-4 text-xl font-bold text-center text-gray-800"
+          className="mb-4 mt-24 text-xl font-bold text-center text-gray-800"
           animate={{ scale: isHovered ? 1.05 : 1 }}
           transition={{ duration: 0.2 }}
         >
           {title}
         </motion.h3>
 
-        <p className={`text-center text-gray-600 text-xl ${DMSans}`}>{description}</p>
+        <p className={`text-start px-6 text-gray-600 text-xl ${DMSans}`}>
+          {description}
+        </p>
 
         <motion.div
           className="absolute inset-x-0 bottom-0 h-1 bg-blue-500"
